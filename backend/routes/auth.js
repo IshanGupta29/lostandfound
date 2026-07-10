@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const user = require('../models/user'); 
+
+// FIX 1: Capital U for the model import!
+const User = require('../models/user'); 
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your_super_secret_campus_key';
 
@@ -10,7 +12,8 @@ router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        const user = await user.findOne({ email });
+        // FIX 2: Capital U for the database search, lowercase u for the variable!
+        const user = await User.findOne({ email });
         if (!user) {
             return res.status(400).json({ message: 'Invalid email or password.' });
         }
@@ -40,7 +43,8 @@ router.post('/login', async (req, res) => {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 });
-// --- NEW REGISTER ROUTE ---
+
+// --- REGISTER ROUTE ---
 router.post('/register', async (req, res) => {
     try {
         const { name, email, password } = req.body;
