@@ -22,7 +22,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://127.0.0.1:5000/api/auth/register'), 
+        Uri.parse('https://lostandfound-ishan0627.vercel.app/api/auth/register'), 
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'name': _nameController.text,

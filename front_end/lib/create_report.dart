@@ -33,7 +33,7 @@ class _CreateReportScreenState extends State<CreateReportScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://127.0.0.1:5000/api/item/create'),
+        Uri.parse('https://lostandfound-ishan0627.vercel.app/api/item/create'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'title': _titleController.text,

@@ -35,7 +35,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     try {
       final response = await http.get(
-        Uri.parse('http://127.0.0.1:5000/api/item/all'),
+        Uri.parse('https://lostandfound-ishan0627.vercel.app/api/item/all'),
       );
 
       if (response.statusCode == 200) {
@@ -61,7 +61,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     
     try {
       final response = await http.put(
-        Uri.parse('http://127.0.0.1:5000/api/item/update'),
+        Uri.parse('https://lostandfound-ishan0627.vercel.app/api/item/update'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'itemId': itemId,

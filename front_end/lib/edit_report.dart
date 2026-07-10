@@ -50,7 +50,7 @@ class _EditReportScreenState extends State<EditReportScreen> {
 
     try {
       final response = await http.put(
-        Uri.parse('http://127.0.0.1:5000/api/item/update'),
+        Uri.parse('https://lostandfound-ishan0627.vercel.app/api/item/update'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'itemId': widget.item['_id'], // The backend needs the ID to know which item to update
