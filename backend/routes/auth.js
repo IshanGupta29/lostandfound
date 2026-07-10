@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User'); 
+const user = require('../models/user'); 
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your_super_secret_campus_key';
 
